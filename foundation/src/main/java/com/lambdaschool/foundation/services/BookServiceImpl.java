@@ -1,6 +1,7 @@
 package com.lambdaschool.foundation.services;
 
 import com.lambdaschool.foundation.models.Book;
+import com.lambdaschool.foundation.models.Wrote;
 import com.lambdaschool.foundation.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,10 @@ public class BookServiceImpl implements BookService{
         newBook.setISBN(book.getISBN());
         newBook.setCopy(book.getCopy());
         newBook.setSection(book.getSection());
+
+//        for (Wrote w : book.getWrotes()) {
+//            newBook.getWrotes().add(new Wrote(w.getAuthor(), w.getBook()));
+//        }
 
         return bookrepos.save(newBook);
     }
